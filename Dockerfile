@@ -21,7 +21,7 @@ globus-proxy-utils globus-gass-copy-progs
 
 # Done afterwards because EMI-3 has an older version and, for this particular meta package, we want
 # the latest release available
-RUN yum -y --disablerepo=EMI* install nordugrid-arc-client
+#RUN yum -y --disablerepo=EMI* install nordugrid-arc-client
 
 # Install dependencies
 RUN yum -y install openssh-clients PyXML
