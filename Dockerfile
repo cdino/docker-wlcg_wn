@@ -18,7 +18,7 @@ RUN yum -y groupinstall 'Development Tools'
 
 RUN yum -y install emi-slurm-client emi-wn emi-glexec_wn \
 globus-proxy-utils globus-gass-copy-progs \
-boost-devel cyrus-sasl-devel e2fsprogs-devel expat-devel 
+boost-devel cyrus-sasl-devel e2fsprogs-devel expat-devel \
 file-devel giflib-devel gmp-devel gpm-devel kernel-devel libacl-devel \
 libattr-devel libcap-devel libcom_err-devel libcurl-devel libdrm-devel \
 libdrm-devel libstdc++-devel libuuid-devel libxml2-devel lockdev-devel \
