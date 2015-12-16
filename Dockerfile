@@ -30,3 +30,5 @@ RUN yum -y install a1_grid_env bouncycastle bouncycastle-mail canl-c canl-java c
 
 # Update!
 RUN yum -y update
+
+COPY etc/* /etc/
