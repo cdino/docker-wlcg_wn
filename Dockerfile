@@ -11,8 +11,7 @@ RUN yum -y install https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-
 http://linuxsoft.cern.ch/wlcg/sl6/x86_64/wlcg-repo-1.0.0-1.el6.noarch.rpm \
 http://emisoft.web.cern.ch/emisoft/dist/EMI/3/sl6/x86_64/base/emi-release-3.0.0-2.el6.noarch.rpm
 
-RUN yum -y install epel-release cvmfs HEP_OSlibs_SL6 wlcg-voms-alice wlcg-voms-atlas wlcg-voms-lhcb \
-wlcg-voms-cms wlcg-voms-ops autofs ca-policy-egi-core iputils
+RUN yum -y install epel-release cvmfs HEP_OSlibs_SL6 autofs ca-policy-egi-core iputils
 
 RUN yum -y groupinstall 'Development Tools'
 
@@ -31,5 +30,10 @@ RUN yum -y install a1_grid_env bouncycastle bouncycastle-mail canl-c canl-java c
 # Update!
 RUN yum -y update
 
+# Extra configuration
+
 RUN chgrp 496 /usr/sbin/glexec
 RUN chmod 4711 /usr/sbin/glexec
+
+RUN ln -s /cvmfs/grid.cern.ch/etc/grid-security/vomses /etc/vomses
+
