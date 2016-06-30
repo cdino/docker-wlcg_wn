@@ -1,7 +1,7 @@
-FROM centos:6.7
+FROM centos:6.8
 
 MAINTAINER Miguel Gila <miguel.gila@cscs.ch>
-LABEL Description="This image is used to test WLCG WN workloads via Docker" Vendor="CSCS" Version="20151214" URL="https://github.com/miguelgila/docker-wlcg_wn"
+LABEL Description="This image is used to test WLCG WN workloads via Docker" Vendor="CSCS" Version="20160630" URL="https://github.com/miguelgila/docker-wlcg_wn"
 
 ADD http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo /etc/yum.repos.d/
 
@@ -34,12 +34,4 @@ RUN yum -y update
 
 RUN chgrp 496 /usr/sbin/glexec
 RUN chmod 4711 /usr/sbin/glexec
-
-# This is ugly!
-RUN mv /etc/grid-security/certificates /etc/grid-security/certificates.rpm
-RUN mv /etc/grid-security/vomsdir /etc/grid-security/vomsdir.rpm
-
-RUN ln -s /cvmfs/grid.cern.ch/etc/grid-security/vomses /etc/vomses
-RUN ln -s /cvmfs/grid.cern.ch/etc/grid-security/certificates /etc/grid-security/certificates
-RUN ln -s /cvmfs/grid.cern.ch/etc/grid-security/vomsdir /etc/grid-security/vomsdir
 
