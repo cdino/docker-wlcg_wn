@@ -35,3 +35,9 @@ RUN yum -y update
 RUN chgrp 496 /usr/sbin/glexec
 RUN chmod 4711 /usr/sbin/glexec
 
+COPY etc/glexec.conf /etc/glexec.conf
+COPY etc/lcmaps-glexec.db /etc/lcmaps-glexec.db
+
+RUN mkdir -p /etc/grid-security/vomsdir/dteam
+COPY etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc /etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc
+COPY etc/grid-security/vomsdir/dteam/voms.hellasgrid.gr.lsc /etc/grid-security/vomsdir/dteam/voms.hellasgrid.gr.lsc
