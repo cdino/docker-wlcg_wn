@@ -35,11 +35,9 @@ RUN yum -y update
 RUN chgrp 496 /usr/sbin/glexec
 RUN chmod 4711 /usr/sbin/glexec
 
-# This is ugly!
-RUN mv /etc/grid-security/certificates /etc/grid-security/certificates.rpm
-RUN mv /etc/grid-security/vomsdir /etc/grid-security/vomsdir.rpm
+COPY etc/glexec.conf /etc/glexec.conf
+COPY etc/lcmaps-glexec.db /etc/lcmaps-glexec.db
 
-RUN ln -s /cvmfs/grid.cern.ch/etc/grid-security/vomses /etc/vomses
-RUN ln -s /cvmfs/grid.cern.ch/etc/grid-security/certificates /etc/grid-security/certificates
-RUN ln -s /cvmfs/grid.cern.ch/etc/grid-security/vomsdir /etc/grid-security/vomsdir
-
+RUN mkdir -p /etc/grid-security/vomsdir/dteam
+COPY etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc /etc/grid-security/vomsdir/dteam/voms2.hellasgrid.gr.lsc
+COPY etc/grid-security/vomsdir/dteam/voms.hellasgrid.gr.lsc /etc/grid-security/vomsdir/dteam/voms.hellasgrid.gr.lsc

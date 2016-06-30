@@ -1,0 +1,18 @@
+path = /usr/lib64/lcmaps
+
+# module definitions
+verify_proxy = "lcmaps_verify_proxy.mod"
+               " -certdir /etc/grid-security/certificates/"
+               " --allow-limited-proxy"
+
+pepc        = "lcmaps_c_pep.mod"
+               "--pep-daemon-endpoint-url https://argus03.lcg.cscs.ch:8154/authz"
+              " -resourceid http://authz-interop.org/xacml/resource/resource-type/wn"
+              " -actionid http://glite.org/xacml/action/execute"
+              " -capath /etc/grid-security/certificates/"
+              " -pep-certificate-mode implicit"
+              "--use-pilot-proxy-as-cafile"
+
+glexec_get_account:
+verify_proxy -> pepc
+
