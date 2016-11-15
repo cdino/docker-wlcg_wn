@@ -56,3 +56,7 @@ RUN chmod 0640 /etc/lcmaps-glexec.db
 ## other tuning ##
 RUN sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 
+## Make it install A-REX downloader that is required if ARC tells CNs to do staging ##
+RUN yum install -y nordugrid-arc-arex
+
+#### DONE #####
