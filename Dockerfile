@@ -1,7 +1,7 @@
 FROM centos:6.9
 
 MAINTAINER Miguel Gila <miguel.gila@cscs.ch>
-LABEL Description="This image is used to test WLCG WN workloads via Docker" Vendor="CSCS" Version="20170718" URL="https://github.com/miguelgila/docker-wlcg_wn"
+LABEL Description="This image is used to test WLCG WN workloads via Docker" Vendor="CSCS" Version="20170731" URL="https://github.com/miguelgila/docker-wlcg_wn"
 
 ADD http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo /etc/yum.repos.d/
 
@@ -73,7 +73,8 @@ VOLUME /cvmfs/cms.cern.ch
 VOLUME /cvmfs/grid.cern.ch
 VOLUME /cvmfs/lhcb.cern.ch
 VOLUME /cvmfs/sft.cern.ch
+VOLUME /localscratch
 
-RUN yum install -y HEP_OSlibs_SL6
+RUN yum install -y HEP_OSlibs_SL6 condor
 
 #### DONE #####
