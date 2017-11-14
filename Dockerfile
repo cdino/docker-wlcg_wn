@@ -15,7 +15,7 @@ RUN yum -y update
 
 # Install WLCG stuff
 RUN yum -y install https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm \
-http://linuxsoft.cern.ch/wlcg/sl6/x86_64/wlcg-repo-1.0.0-1.el6.noarch.rpm \
+http://linuxsoft.cern.ch/wlcg/sl6/x86_64/wlcg-repo-1.0.0-1.el6.noarch.rpm
 
 RUN yum -y install cvmfs HEP_OSlibs_SL6 autofs ca-policy-egi-core iputils
 
