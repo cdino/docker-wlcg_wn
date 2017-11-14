@@ -1,7 +1,7 @@
 FROM centos:6.9
 
 MAINTAINER Miguel Gila <miguel.gila@cscs.ch>
-LABEL Description="This image is used to test WLCG WN workloads via Docker" Vendor="CSCS" Version="20170731" URL="https://github.com/miguelgila/docker-wlcg_wn"
+LABEL Description="This image is used to test WLCG WN workloads via Docker" Vendor="CSCS" Version="20171114" URL="https://github.com/miguelgila/docker-wlcg_wn"
 
 ADD http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo /etc/yum.repos.d/
 
